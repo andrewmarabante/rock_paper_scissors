@@ -6,7 +6,8 @@
     </head>
         <script>
             const choices= {rock:'rock',paper:'paper',scissors:'scissors'}
-           function getcomputerchoice(choices)
+            let playerchoice= prompt('Choose Rock, Paper, or Scissors').toLowerCase()
+           let computerchoice = function randomchoice(choices)
            {
             const keys=Object.keys(choices)
             return keys[Math.floor(Math.random() * keys.length)];
@@ -19,6 +20,20 @@
         //taking the floor of this will give us 0,1,or 2
         //which correlate to the index of the keys! hencekeys[]
            }
-           console.log(getcomputerchoice(choices))
+           function game(playerchoice,computerchoice)
+           {
+            if  (playerchoice === 'rock' && computerchoice(choices) === 'paper'){return 'You Lose'}
+            else if (playerchoice === 'rock' && computerchoice(choices) === 'rock'){return 'Tie'}
+            else if (playerchoice === 'rock' && computerchoice(choices) === 'scissors'){return 'You Win'}
+            else if (playerchoice === 'paper' && computerchoice(choices) === 'rock'){return 'You Win'}
+            else if (playerchoice === 'paper' && computerchoice(choices) === 'scissors'){return 'You Lose'}
+            else if (playerchoice === 'paper' && computerchoice(choices) === 'paper'){return 'Tie'}
+            else if (playerchoice === 'scissors' && computerchoice(choices) === 'paper'){return 'You Win'}
+            else if (playerchoice === 'scissors' && computerchoice(choices) === 'rock'){return 'You Lose'}
+            else if (playerchoice === 'scissors' && computerchoice(choices) === 'scissors'){return 'Tie'}
+            else {return 'Invalid Response, Refresh to Retry!'}
+            }
+          
+           console.log(game(playerchoice,computerchoice))
         </script>
 </html>
