@@ -17,20 +17,20 @@
             let wins=0,losses=0
             function round (playchoice, compchoice) 
            {
-             if (playchoice === compchoice){console.log('Tie!')}
+             if (playchoice === compchoice){console.log('Tie! :'+wins+' Wins, '+losses+'Losses')}
              else if (playchoice === 'rock'){
-                                                if (compchoice === 'scissors'){wins++; console.log('You Win')}
-                                                else{return 'You Lose!'}
+                                                if (compchoice === 'scissors'){wins++; console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
+                                                else{losses++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
                                             }
              else if(playchoice === 'paper'){
-                                                if(compchoice === 'rock'){wins++;console.log('You Win')}
-                                                else{return 'You Lose!'}
+                                                if(compchoice === 'rock'){wins++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
+                                                else{losses++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
                                             }
             else if(playchoice === 'scissors'){
-                                                if (compchoice === 'paper'){wins++;console.log('You Win')}
-                                                else{return 'You Lose!'}
+                                                if (compchoice === 'paper'){wins++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
+                                                else{losses++;console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
                                             }
-            else{return 'Invalid Entry!'}}
+            else{console.log('Invalid Entry! Try Again!')}}
             do{
                 let playerchoice= prompt('Choose Rock, Paper, or Scissors').toLowerCase()
                 function computerchoice(choices)
@@ -47,7 +47,7 @@
             //which correlate to the index of the keys! hencekeys[]
             } 
                 round(playerchoice, computerchoice(choices))
-                sleep(2000)
+                sleep(3000)
             }while(wins<3 && losses<3)
             if(wins === 3){return 'You Win!'}
             else{return 'You Lose!'}
