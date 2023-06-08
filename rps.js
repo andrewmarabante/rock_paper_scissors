@@ -1,29 +1,63 @@
+let playerchoice;
+document.getElementById('rock').addEventListener('click', chooserock)
+
+function chooserock(e)
+{
+    playerchoice = 'rock';
+    console.log(playerchoice)
+}
+document.getElementById('paper').addEventListener('click', choosepaper)
+
+function choosepaper(e)
+{
+    playerchoice = 'paper';
+    console.log(playerchoice)
+}
+
+document.getElementById('scissors').addEventListener('click', choosescissors)
+
+function choosescissors(e)
+{
+    playerchoice = 'scissors';
+    console.log(playerchoice)
+}
+
+/*
 const choices= {rock:'rock',paper:'paper',scissors:'scissors'}
-function sleep(milliseconds) {
+let wins=0,losses=0;
+let buttons = document.querySelectorAll('button')
+
+buttons.addEventListener('click', function(e)
+{
+ console.log('hit button');
+})
+ function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
     do {
     currentDate = Date.now();
-    } while (currentDate - date < milliseconds);}
-function game()
+    } while (currentDate - date < milliseconds);
+}
+
+    function round (playchoice, compchoice) 
+    {
+     if (playchoice === compchoice){console.log('Tie! :'+wins+' Wins, '+losses+'Losses')}
+     else if (playchoice === 'rock'){
+                                        if (compchoice === 'scissors'){wins++; console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
+                                        else{losses++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
+                                    }
+     else if(playchoice === 'paper'){
+                                        if(compchoice === 'rock'){wins++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
+                                        else{losses++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
+                                    }
+    else if(playchoice === 'scissors'){
+                                        if (compchoice === 'paper'){wins++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
+                                        else{losses++;console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
+                                    }
+    else{console.log('Invalid Entry! Try Again!')}
+    }
+    function game()
 {
-let wins=0,losses=0
-function round (playchoice, compchoice) 
-{
- if (playchoice === compchoice){console.log('Tie! :'+wins+' Wins, '+losses+'Losses')}
- else if (playchoice === 'rock'){
-                                    if (compchoice === 'scissors'){wins++; console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
-                                    else{losses++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
-                                }
- else if(playchoice === 'paper'){
-                                    if(compchoice === 'rock'){wins++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
-                                    else{losses++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
-                                }
-else if(playchoice === 'scissors'){
-                                    if (compchoice === 'paper'){wins++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
-                                    else{losses++;console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
-                                }
-else{console.log('Invalid Entry! Try Again!')}}
 do{
     let playerchoice= prompt('Choose Rock, Paper, or Scissors').toLowerCase()
     function computerchoice(choices)
@@ -45,4 +79,5 @@ do{
 if(wins === 3){return 'You Win!'}
 else{return 'You Lose!'}
 }
-console.log(game())
+
+*/
