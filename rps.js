@@ -1,36 +1,55 @@
 let playerchoice;
-document.getElementById('rock').addEventListener('click', chooserock)
+const choices= {rock:'rock',paper:'paper',scissors:'scissors'};
+let wins=0,losses=0;
 
+document.getElementById('rock').addEventListener('click', chooserock)
 function chooserock(e)
 {
     playerchoice = 'rock';
-    console.log(playerchoice)
+    compchoice=computerchoice(choices);
+    console.log(round(playerchoice,compchoice));
 }
 document.getElementById('paper').addEventListener('click', choosepaper)
-
 function choosepaper(e)
 {
     playerchoice = 'paper';
-    console.log(playerchoice)
+    compchoice=computerchoice(choices);
+    console.log(round(playerchoice,compchoice));
 }
-
 document.getElementById('scissors').addEventListener('click', choosescissors)
 
 function choosescissors(e)
 {
     playerchoice = 'scissors';
-    console.log(playerchoice)
+    compchoice=computerchoice(choices);
+    console.log(round(playerchoice,compchoice));
 }
 
+function computerchoice(choices)
+{
+    const keys=Object.keys(choices)
+    return keys[Math.floor(Math.random() * keys.length)];
+}
+function round (playchoice, compchoice) 
+    {
+     if (playchoice === compchoice){console.log('Tie! :'+wins+' Wins, '+losses+'Losses')}
+     else if (playchoice === 'rock'){
+                                        if (compchoice === 'scissors'){wins++; console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
+                                        else{losses++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
+                                    }
+     else if(playchoice === 'paper'){
+                                        if(compchoice === 'rock'){wins++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
+                                        else{losses++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
+                                    }
+    else if(playchoice === 'scissors'){
+                                        if (compchoice === 'paper'){wins++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
+                                        else{losses++;console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
+                                    }
+    else{console.log('Invalid Entry! Try Again!')}
+    }
 /*
 const choices= {rock:'rock',paper:'paper',scissors:'scissors'}
 let wins=0,losses=0;
-let buttons = document.querySelectorAll('button')
-
-buttons.addEventListener('click', function(e)
-{
- console.log('hit button');
-})
  function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
