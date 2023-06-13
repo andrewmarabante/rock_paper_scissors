@@ -7,14 +7,15 @@ function chooserock(e)
 {
     playerchoice = 'rock';
     compchoice=computerchoice(choices);
-    console.log(round(playerchoice,compchoice));
+    document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
+    
 }
 document.getElementById('paper').addEventListener('click', choosepaper)
 function choosepaper(e)
 {
     playerchoice = 'paper';
     compchoice=computerchoice(choices);
-    console.log(round(playerchoice,compchoice));
+    document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
 }
 document.getElementById('scissors').addEventListener('click', choosescissors)
 
@@ -22,7 +23,7 @@ function choosescissors(e)
 {
     playerchoice = 'scissors';
     compchoice=computerchoice(choices);
-    console.log(round(playerchoice,compchoice));
+    document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
 }
 
 function computerchoice(choices)
@@ -32,20 +33,20 @@ function computerchoice(choices)
 }
 function round (playchoice, compchoice) 
     {
-     if (playchoice === compchoice){console.log('Tie! :'+wins+' Wins, '+losses+'Losses')}
+     if (playchoice === compchoice){return('Tie!')}
      else if (playchoice === 'rock'){
-                                        if (compchoice === 'scissors'){wins++; console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
-                                        else{losses++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
+                                        if (compchoice === 'scissors'){wins++; return('Rock Beats Scissors!: You Win!')}
+                                        else{losses++;return('Paper Beats Rock! You Lose!')}
                                     }
      else if(playchoice === 'paper'){
-                                        if(compchoice === 'rock'){wins++;console.log('Paper Beats Rock!: '+wins+' Wins, '+losses+'Losses')}
-                                        else{losses++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
+                                        if(compchoice === 'rock'){wins++;return('Paper Beats Rock! You Win')}
+                                        else{losses++;return('Scissors Beats Paper! You Lose! ')}
                                     }
     else if(playchoice === 'scissors'){
-                                        if (compchoice === 'paper'){wins++;console.log('Scissors Beats Paper!: '+wins+' Wins, '+losses+'Losses')}
-                                        else{losses++;console.log('Rock Beats Scissors!: '+wins+' Wins, '+losses+'Losses')}
+                                        if (compchoice === 'paper'){wins++;return('Scissors Beats Paper! You Win!')}
+                                        else{losses++;return('Rock Beats Scissors! You Lose!')}
                                     }
-    else{console.log('Invalid Entry! Try Again!')}
+    else{return('Invalid Entry! Try Again!')}
     }
 /*
 const choices= {rock:'rock',paper:'paper',scissors:'scissors'}
