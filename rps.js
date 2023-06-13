@@ -1,7 +1,6 @@
 let playerchoice;
 const choices= {rock:'rock',paper:'paper',scissors:'scissors'};
 let wins=0,losses=0;
-
 document.getElementById('rock').addEventListener('click', chooserock)
 function chooserock(e)
 {
@@ -10,6 +9,17 @@ function chooserock(e)
     document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
     document.getElementById('playerscore').innerHTML=wins;
     document.getElementById('computerscore').innerHTML=losses;
+    if(wins===5)
+    {
+        document.getElementById('game').innerHTML='You Win! Click to play again!'
+        wins=0,losses=0;  
+    }
+    if(losses===5)
+    {
+        document.getElementById('game').innerHTML='YouLose! Click to play again!'
+        wins=0,losses=0;
+    }
+    if(losses===1 || wins===1){document.getElementById('game').innerHTML='First to 5 Wins!'}
 }
 document.getElementById('paper').addEventListener('click', choosepaper)
 function choosepaper(e)
@@ -19,6 +29,17 @@ function choosepaper(e)
     document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice);
     document.getElementById('playerscore').innerHTML=wins;
     document.getElementById('computerscore').innerHTML=losses;
+    if(wins===5)
+    {
+        document.getElementById('game').innerHTML='You Win! Click to play again!'
+        wins=0,losses=0;  
+    }
+    if(losses===5)
+    {
+        document.getElementById('game').innerHTML='YouLose! Click to play again!'
+        wins=0,losses=0;
+    }
+    if(losses===1 || wins===1){document.getElementById('game').innerHTML='First to 5 Wins!'}
 }
 document.getElementById('scissors').addEventListener('click', choosescissors)
 
@@ -29,7 +50,18 @@ function choosescissors(e)
     document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
     document.getElementById('playerscore').innerHTML=wins;
     document.getElementById('computerscore').innerHTML=losses;
-}
+    if(wins===5)
+    {
+        document.getElementById('game').innerHTML='You Win! Click to play again!'
+        wins=0,losses=0;  
+    }
+    if(losses===5)
+    {
+        document.getElementById('game').innerHTML='YouLose! Click to play again!'
+        wins=0,losses=0;
+    }
+    if(losses===1 || wins===1){document.getElementById('game').innerHTML='First to 5 Wins!'}
+}  
 
 function computerchoice(choices)
 {
@@ -52,6 +84,13 @@ function round (playchoice, compchoice)
                                         else{losses++;return('Rock Beats Scissors! You Lose!')}
                                     }
     else{return('Invalid Entry! Try Again!')}
+    }
+    function sleep(milliseconds) {
+        const date = Date.now();
+        let currentDate = null;
+        do {
+        currentDate = Date.now();
+        } while (currentDate - date < milliseconds);
     }
 /*
 const choices= {rock:'rock',paper:'paper',scissors:'scissors'}
