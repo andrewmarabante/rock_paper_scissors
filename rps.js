@@ -8,14 +8,17 @@ function chooserock(e)
     playerchoice = 'rock';
     compchoice=computerchoice(choices);
     document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
-    
+    document.getElementById('playerscore').innerHTML=wins;
+    document.getElementById('computerscore').innerHTML=losses;
 }
 document.getElementById('paper').addEventListener('click', choosepaper)
 function choosepaper(e)
 {
     playerchoice = 'paper';
     compchoice=computerchoice(choices);
-    document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
+    document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice);
+    document.getElementById('playerscore').innerHTML=wins;
+    document.getElementById('computerscore').innerHTML=losses;
 }
 document.getElementById('scissors').addEventListener('click', choosescissors)
 
@@ -24,6 +27,8 @@ function choosescissors(e)
     playerchoice = 'scissors';
     compchoice=computerchoice(choices);
     document.getElementById('roundresult').innerHTML=round(playerchoice,compchoice)
+    document.getElementById('playerscore').innerHTML=wins;
+    document.getElementById('computerscore').innerHTML=losses;
 }
 
 function computerchoice(choices)
