@@ -12,11 +12,13 @@ function chooserock(e)
     if(wins===5)
     {
         document.getElementById('game').innerHTML='You Win! Click to play again!'
+        document.getElementById('game').style.color = 'blue'
         wins=0,losses=0;  
     }
     if(losses===5)
     {
-        document.getElementById('game').innerHTML='YouLose! Click to play again!'
+        document.getElementById('game').innerHTML='You Lose! Click to play again!'
+        document.getElementById('game').style.color = 'red'
         wins=0,losses=0;
     }
     if(losses===1 || wins===1){document.getElementById('game').innerHTML='First to 5 Wins!'}
@@ -32,11 +34,13 @@ function choosepaper(e)
     if(wins===5)
     {
         document.getElementById('game').innerHTML='You Win! Click to play again!'
+        document.getElementById('game').style.color = 'blue'
         wins=0,losses=0;  
     }
     if(losses===5)
     {
-        document.getElementById('game').innerHTML='YouLose! Click to play again!'
+        document.getElementById('game').innerHTML='You Lose! Click to play again!'
+        document.getElementById('game').style.color = 'red'
         wins=0,losses=0;
     }
     if(losses===1 || wins===1){document.getElementById('game').innerHTML='First to 5 Wins!'}
@@ -53,11 +57,13 @@ function choosescissors(e)
     if(wins===5)
     {
         document.getElementById('game').innerHTML='You Win! Click to play again!'
+        document.getElementById('game').style.color = 'blue'
         wins=0,losses=0;  
     }
     if(losses===5)
     {
-        document.getElementById('game').innerHTML='YouLose! Click to play again!'
+        document.getElementById('game').innerHTML='You Lose! Click to play again!'
+        document.getElementById('game').style.color = 'red'
         wins=0,losses=0;
     }
     if(losses===1 || wins===1){document.getElementById('game').innerHTML='First to 5 Wins!'}
